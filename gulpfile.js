@@ -37,38 +37,73 @@ const autoprefixer = require('gulp-autoprefixer');
 const del = require('del');
 const webserver = require('browser-sync').create();
 
-// Сборка scss
-gulp.task('sass', function() {
-    return gulp.src('project/scss/main.scss')
-        .pipe(plumber())
-        .pipe(sass())
-        .pipe(autoprefixer())
-        .pipe(gulp.dest('project/dist/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
-});
-
 // удаление папки сборки
-gulp.task('clean', function() {
-    return del('project/dist/css/main.css');
-});
+function clean() {
+    return del(paths.clean);
+}
 
-// общая задача
-gulp.task('build', gulp.series('clean', 'sass'));
+function html() {
+    return gulp.src(paths.src.html)
+        .pipe(plumber()) // отслеживание ошибок
+        .pipe(gulp.dest(paths.build.html)) // выкладывание готовых файлов
+        .pipe(webserver.reload({
+            stream: true
+        })); // перезагрузка сервера
+}
+
+function styles() {
+    return gulp.src(paths.src.style) // получим main.scss
+        .pipe(plumber()) // для отслеживания ошибок
+        .pipe(sass()) // scss -> css
+        .pipe(autoprefixer({ // добавим префиксы
+            overrideBrowserslist: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(paths.build.css)) // выгружаем в build
+        .pipe(webserver.reload({
+            stream: true
+        })); // перезагрузим сервер
+}
+
+function script() {
+    return gulp.src(paths.src.js, {
+            sourcemaps: true
+        })
+        .pipe(plumber())
+        .pipe(gulp.dest(paths.build.js)); // выкладывание готовых файлов
+
+}
 
 // Инкрементальная сборка - пересборка если изменился файлы
-gulp.task('watch', function() {
-    gulp.watch('project/scss/*.scss', gulp.series('sass'));
-});
+function watch() {
+    gulp.watch(paths.watch.html, html);
+    gulp.watch(paths.watch.css, styles);
+    gulp.watch(paths.watch.js, script);
+}
+exports.clean = clean;
+exports.styles = styles;
+exports.html = html;
+exports.watch = watch;
+exports.script = script;
 
 // Создание сервера
 gulp.task('server', function() {
-    browserSync.init({
-        server: 'project/dist'
+    webserver.init({
+        server: paths.build.html
     });
-    browserSync.watch('project/dist/**/*.*').on('change', browserSync.reload);
+    webserver.watch(paths.baseDir).on('change', browserSync.reload);
 });
+
+// сборка
+gulp.task('build',
+    gulp.series(clean,
+        gulp.parallel(
+            html,
+            styles,
+            script
+        )
+    )
+);
 
 // Сборка заданий в одно общее -задача по умолчанию
 gulp.task('default', gulp.series('build', gulp.parallel('watch', 'server')));
