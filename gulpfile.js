@@ -1,11 +1,41 @@
 'use strict';
 
+/* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
+var paths = {
+    build: {
+        html: 'dist/',
+        js: 'dist/js/',
+        css: 'dist/css/',
+        img: 'dist/img/',
+        fonts: 'dist/webfonts/'
+    },
+    src: {
+        html: 'src/*.html',
+        js: 'src/js/*.js',
+        style: 'src/style/app.scss',
+        img: 'src/img/**/*.*',
+        fonts: 'src/webfonts/**/*.*',
+        service: 'src/service/**/*.*',
+        info: 'src/info/**/*.*'
+    },
+    watch: {
+        html: 'src/**/*.html',
+        js: 'src/js/**/*.js',
+        css: 'src/style/**/*.scss',
+        img: 'src/img/**/*.*',
+        fonts: 'srs/webfonts/**/*.*'
+    },
+    clean: 'dist',
+    baseDir: 'dist'
+};
+
+
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const autoprefixer = require('gulp-autoprefixer');
 const del = require('del');
-const browserSync = require('browser-sync').create();
+const webserver = require('browser-sync').create();
 
 // Сборка scss
 gulp.task('sass', function() {
