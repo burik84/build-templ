@@ -35,7 +35,7 @@ const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const autoprefixer = require('gulp-autoprefixer');
 const del = require('del');
-const webserver = require('browser-sync').create();
+const browserSync = require('browser-sync').create();
 
 // удаление папки сборки
 function clean() {
@@ -46,9 +46,7 @@ function html() {
     return gulp.src(paths.src.html)
         .pipe(plumber()) // отслеживание ошибок
         .pipe(gulp.dest(paths.build.html)) // выкладывание готовых файлов
-        .pipe(webserver.reload({
-            stream: true
-        })); // перезагрузка сервера
+        .pipe(browserSync.stream()); // перезагрузка сервера
 }
 
 function styles() {
@@ -60,9 +58,7 @@ function styles() {
             cascade: false
         }))
         .pipe(gulp.dest(paths.build.css)) // выгружаем в build
-        .pipe(webserver.reload({
-            stream: true
-        })); // перезагрузим сервер
+        .pipe(browserSync.stream()); // перезагрузим сервер
 }
 
 function script() {
@@ -70,29 +66,25 @@ function script() {
             sourcemaps: true
         })
         .pipe(plumber())
-        .pipe(gulp.dest(paths.build.js)); // выкладывание готовых файлов
-
+        .pipe(gulp.dest(paths.build.js)) // выкладывание готовых файлов
+        .pipe(browserSync.stream()); // перезагрузим сервер
 }
 
 // Инкрементальная сборка - пересборка если изменился файлы
 function watch() {
+    browserSync.init({
+        server: paths.baseDir
+    });
     gulp.watch(paths.watch.html, html);
     gulp.watch(paths.watch.css, styles);
     gulp.watch(paths.watch.js, script);
+    gulp.watch(paths.watch.html, browserSync.reload);
 }
 exports.clean = clean;
 exports.styles = styles;
 exports.html = html;
 exports.watch = watch;
 exports.script = script;
-
-// Создание сервера
-gulp.task('server', function() {
-    webserver.init({
-        server: paths.build.html
-    });
-    webserver.watch(paths.baseDir).on('change', browserSync.reload);
-});
 
 // сборка
 gulp.task('build',
@@ -106,4 +98,4 @@ gulp.task('build',
 );
 
 // Сборка заданий в одно общее -задача по умолчанию
-gulp.task('default', gulp.series('build', gulp.parallel('watch', 'server')));
+gulp.task('default', gulp.series('build', watch));
