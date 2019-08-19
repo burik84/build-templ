@@ -78,7 +78,6 @@ function watch() {
     gulp.watch(paths.watch.html, html);
     gulp.watch(paths.watch.css, styles);
     gulp.watch(paths.watch.js, script);
-    gulp.watch(paths.watch.html, browserSync.reload);
 }
 exports.clean = clean;
 exports.styles = styles;
