@@ -29,13 +29,23 @@ var paths = {
     baseDir: 'dist'
 };
 
+// для выбора режимов
+// режим отладки development
+// let isDev = true;
+// режим production
+let isDev = false;
+let isProd = !isDev;
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const autoprefixer = require('gulp-autoprefixer');
+const postcss = require('gulp-postcss');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
+const cleanCSS = require('gulp-clean-css');
+const rigger = require('gulp-rigger');
 
 // удаление папки сборки
 function clean() {
@@ -45,6 +55,7 @@ function clean() {
 function html() {
     return gulp.src(paths.src.html)
         .pipe(plumber()) // отслеживание ошибок
+        .pipe(rigger()) //Прогоним через rigger
         .pipe(gulp.dest(paths.build.html)) // выкладывание готовых файлов
         .pipe(browserSync.stream()); // перезагрузка сервера
 }
@@ -53,10 +64,14 @@ function styles() {
     return gulp.src(paths.src.style) // получим main.scss
         .pipe(plumber()) // для отслеживания ошибок
         .pipe(sass()) // scss -> css
-        .pipe(autoprefixer({ // добавим префиксы
+        .pipe(concat('all.css'))
+        .pipe(postcss([autoprefixer({ // добавим префиксы
             overrideBrowserslist: ['last 2 versions'],
             cascade: false
-        }))
+        })]))
+        .pipe(gulpif(isProd, cleanCSS({
+            level: 1
+        })))
         .pipe(gulp.dest(paths.build.css)) // выгружаем в build
         .pipe(browserSync.stream()); // перезагрузим сервер
 }
