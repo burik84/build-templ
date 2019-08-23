@@ -5,7 +5,7 @@
 ## Описание видео курса
 The first 13 videos are aimed at understanding the fundamentals of Flexbox - we will take a deep dive into understanding rows, columns, axes, wrapping, alignment, centering and layout. The last 7 are code alongs where we will build everything from a navigation to a mobile app layout entirely with Flexbox!
 
-И конечно есть клевая [шпаргалка](https://tpverstak.ru/flex-cheatsheet/)
+Незабываем про [шпаргалку](https://tpverstak.ru/flex-cheatsheet/) с примерами.
 
 ### Описание
 Итак, есть контейнер (флекс-контейнер) и есть наши блоки  (флекс-элементы), которые мы хотим выравнивать по нашим пожеланиям в этом контейнере.
