@@ -27,6 +27,7 @@ npm install --save-dev gulp (см. в файле gulpfile.js) и другие у
  + jquery
  + bootstrap
  + normalize.css
+ + pug
 
 и не забыть указать в файле package.json
  ```
