@@ -12,3 +12,11 @@
 ## Flexbox
 
 Смотреть [здесь](./flexbox/flex.md). И конечно есть клевая [шпаргалка](https://tpverstak.ru/flex-cheatsheet/) с примерами.
+
+## PUG
+Знакомство с шаблонизатором PUG
+[файл](pug-tutorial.md)
+
+### git
+Работа с GIT. Основные моменты
+[файл](git-tutorial.md)
