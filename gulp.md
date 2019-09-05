@@ -50,4 +50,15 @@ let isDev = false;
 ```
 Запускаем для проверки работы сборщика gulp и название команды.
 
+### SCSS
+Для подключение normalize к проекту используем `node-sass-tilde-importer`, в gulp вставляем
+```
+const tildeImporter = require('node-sass-tilde-importer');
+
+.pipe(sass({
+    importer: tildeImporter
+}).on('error', sass.logError)) // scss -> css + импорт из nodemodules c использованием ~
+```
+В файле сборки .scss вставлеяем `@import '~normalize.css/normalize';`
+
 [Назад](README.md)
