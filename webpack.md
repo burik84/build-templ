@@ -9,8 +9,9 @@
 * устанавливаем webpack локально `npm install -save-dev webpack webpack-cli`
 
 ### Использование плагина browser-sync
-* `npm install -save-dev browser-sync-webpack-plugin`
-* `npm install -save-dev webpack-dev-server`
+* `npm install --save-dev browser-sync-webpack-plugin`
+* `npm install --save-dev webpack-dev-server`
+* `npm install --save-dev pug pug-loader`
 
 ### Настройка webpack
 Файл package.json
