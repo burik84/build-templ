@@ -32,5 +32,9 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 ### Помощь.
 
 Использовал следующие ресурсы:
+* [Webpack 4: практические рекомендации по настройке](https://tproger.ru/translations/configure-webpack4/)
+* [Лучший способ подключения и обработки шрифтов.](https://tocode.ru/curses/nastroika-webpack4/podkluchenie-shriftov)
+* [Обработка файлов, настройка webpack-merge и copy-webpack-plugin](https://tocode.ru/curses/nastroika-webpack4/obrabotka-failov-nastroika-merge)
 * [Использование webpack для верстки. Подключение Pug](https://tocode.ru/curses/nastroika-webpack4/webpack-dlya-verstki-pug)
 * [Webpack Template on GitHub](https://github.com/vedees/webpack-template-pug)
+* [Настройка препроцессора SASS, подключение postcss плагинов](https://tocode.ru/curses/nastroika-webpack4/preprocessor-sass-postcss)
