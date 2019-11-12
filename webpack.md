@@ -28,3 +28,9 @@
 ```
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 ```
+
+### Помощь.
+
+Использовал следующие ресурсы:
+* [Использование webpack для верстки. Подключение Pug](https://tocode.ru/curses/nastroika-webpack4/webpack-dlya-verstki-pug)
+* [Webpack Template on GitHub](https://github.com/vedees/webpack-template-pug)
