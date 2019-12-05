@@ -50,6 +50,9 @@ let isDev = false;
 ```
 Запускаем для проверки работы сборщика gulp и название команды.
 
+Использование gulpif
+* gulpif(condition, plugin1(), plugin2()) или смотреть [здесь](https://www.npmjs.com/package/gulp-if)
+
 ### SCSS
 Для подключение normalize к проекту используем `node-sass-tilde-importer`, в gulp вставляем
 ```
