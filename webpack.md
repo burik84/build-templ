@@ -44,7 +44,7 @@
 
 `devtool: "source-map",` параметр позволяет создавать карты исходников для js и css файлов.
 
-`module: {rules: [{ },]},` правило для обработки конкретных файлов (js, css и т.д.)
+`module: {rules: [{ },{}]},` правило для обработки конкретных файлов (js, css и т.д.)
 
 ## Обработка css файлов
 Необходимые модули node-sass, sass-loader, css-loader и mini-css-extract-plugin
