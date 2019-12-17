@@ -2,29 +2,45 @@
  Общая информация по webpack. Как с ним работать, настраивать и чтоб он помогал!!!
 
 ## Установка
+
 * создаем файл в папке проекта `npm init`
 * устанавливаем webpack локально `npm install -save-dev webpack webpack-cli`
 
-### Арихтектура
+## Арихтектура
+
 * src
   - img
   - js
-  - сss
+    - config
+      - postcss.config.js
+  - sсss
   - index.html
+  - .babelrc
+  - webpack.config.js
 * dist [development] для разработки npm run dev
 * build [production] для публикации npm run build
-### Дополнительные плагины
-* `npm install --save-dev css-loader style-loader`
-* `npm install --save jquery` jQuery если необходимо
-* `npm install --save-dev webpack-dev-server`
+
+### Дополнительные плагины для настройки
+
+* `npm install --save-dev webpack webpack-cli webpack-dev-server`
+  * `npm install --save-dev css-loader style-loader node-sass mini-css-extract-plugin sass-loader`
 * `npm install --save-dev pug pug-loader`
-* `npm install -D babel-loader @babel/core @babel/preset-env`
+* `npm install--save-dev babel-loader @babel/core @babel/preset-env`
+* `npm install  --save-dev file-loader`
+* `npm install  --save-dev postcss-loader autoprefixer cssnano css-mqpacker`
+
+### Инструменты для подключения к проекту
+
+* `npm install --save jquery` jQuery если необходимо
+* `npm install --save normalize.css`
+* `npm install --save bootstrap`
 
 ### Настройка режима работы webpack
-Файл package.json
+Файл `package.json`
+
+Режимы разработки - dev для разработки, build в режиме производства
 ```
 "scripts": {
-  /* Добавить режимы работы - dev для разработки, build в режиме производства*/
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
@@ -35,6 +51,40 @@
 * npm run build также произойдет сборка проекта, но уже итоговая
 * npm run watch запускается режим автоматического просмотра изменений файлов проекта с автоматическим допостроением измененных файлов
 * npm run start запустится локальный сервер
+*
+Не забыть указать `browserslist` для автопрефиксов
+```
+"browserslist": [
+  "last 1 version",
+  "> 1%",
+  "IE 10"
+],
+```
+### Дополнительные файлы конфигураций
+В файле .babelrc указываем
+```
+{
+"presets":[
+    "@babel/preset-env"
+    ]
+}
+```
+В файле postcss.config.js для конфигурации postcss указываем
+```
+module.exports = {
+    plugins: [
+        require('autoprefixer'), ,
+        require('css-mqpacker'),
+        require('cssnano')({
+            preset: ['default', {
+                discardComments: {
+                    removeAll: true,
+                },
+            }]
+        }),
+    ],
+};
+```
 
 ### Файл настроек webpack.config.js
 
