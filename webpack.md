@@ -11,14 +11,17 @@
 * src
   - img
   - js
-    - config
-      - postcss.config.js
+  - config
+    - postcss.config.js
+    - webpack.build.js - файл настроек для публикации (минификация)
+    - webpack.dev.js - файл настроек для тестирование
+    - webpack.config.js - общий файл для вебпак
   - sсss
+  - fonts
+  - static
   - index.html
   - .babelrc
-  - webpack.config.js
-* dist [development] для разработки npm run dev
-* build [production] для публикации npm run build
+* build [development] для публикации npm run build
 
 ### Дополнительные плагины для настройки
 
@@ -26,14 +29,17 @@
   * `npm install --save-dev css-loader style-loader node-sass mini-css-extract-plugin sass-loader`
 * `npm install --save-dev pug pug-loader`
 * `npm install--save-dev babel-loader @babel/core @babel/preset-env`
-* `npm install  --save-dev file-loader`
+* `npm install  --save-dev file-loader copy-webpack-plugin html-webpack-plugin` для копирование файлов из папки src в dist
 * `npm install  --save-dev postcss-loader autoprefixer cssnano css-mqpacker`
+* `npm install  --save-dev webpack-merge` для разделение режимов работы тестирование dev и публикации build
+* `npm install  --save-dev vue-loader vue-style-loader vue-template-compiler` для работы с vue
 
 ### Инструменты для подключения к проекту
 
 * `npm install --save jquery` jQuery если необходимо
 * `npm install --save normalize.css`
 * `npm install --save bootstrap`
+* `npm install --save vue vuex` установка vue
 
 ### Настройка режима работы webpack
 Файл `package.json`
@@ -86,7 +92,7 @@ module.exports = {
 };
 ```
 
-### Файл настроек webpack.config.js
+## Файл настроек webpack.config.js
 
 `entry: [],` указываем, какой js файл будем собирать
 
@@ -96,17 +102,59 @@ module.exports = {
 
 `module: {rules: [{ },{}]},` правило для обработки конкретных файлов (js, css и т.д.)
 
-## Обработка css файлов
+### Обработка css файлов
 Необходимые модули node-sass, sass-loader, css-loader и mini-css-extract-plugin
 ```
 module: {
     rules: [{
+        test: /\.scss$/,
+        use: [
+            'style-loader',
+            MiniCssExtractPlugin.loader,
+            {
+                loader: 'css-loader',
+                options: {
+                    sourceMap: true
+                }
+            }, {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true,
+                    config: {
+                        path: 'src/js/config/postcss.config.js'
+                    }
+                }
+            }, {
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: true
+                }
+            }
+        ],
+    }, {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+            'style-loader',
+            MiniCssExtractPlugin.loader,
+            {
+                loader: 'css-loader',
+                options: {
+                    sourceMap: true
+                }
+            }, {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true,
+                    config: {
+                        path: 'src/js/config/postcss.config.js'
+                    }
+                }
+            }
+        ],
     }, ],
 },
 ```
-## Обработка js файлов
+### Обработка js файлов
 ```
 module: {
     rules: [{
