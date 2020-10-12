@@ -1,3 +1,37 @@
+article {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px 1fr 40px;
+      grid-template-columns: 40px 1fr 40px;
+  grid-column-gap: 10px;
+}
+
+article > * {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  min-width: 0;
+}
+
+article > figure {
+  grid-column: 1/-1;
+  margin: 20px 0;
+}
+
+article > .aside {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  color: #666;
+  font-size: 0.8em;
+}
+
+article > blockquote {
+  grid-column: 1/-1;
+  margin: 20px 0;
+  color: #666;
+  border-left: 10px solid #eee;
+  padding-left: 10px;
+}
+
 /* General styling */
 html, body {
   margin: 0;
