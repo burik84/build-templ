@@ -14,8 +14,12 @@
 
 .header {
     grid-column: span 12;
+    display: flex;
+    // justify-content: space-evenly;
 }
-
+.header>div:nth-child(3){
+    margin-left: auto;
+}
 .menu {
     grid-column: span 2;
 }
