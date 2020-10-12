@@ -1,3 +1,8 @@
+html, body {
+  background-color: #ffeead;
+  margin: 10px;
+}
+
 .container > div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,17 +13,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1em;
+  font-size: 2em;
   color: #ffeead;
-}
-
-html, body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #ffeead;
-  height: 100%;
-  padding: 10px;
-  margin: 0px;
 }
 
 .container > div:nth-child(1n) {
@@ -35,5 +31,43 @@ html, body {
 
 .container > div:nth-child(4n) {
   background-color: #ffcc5c;
+}
+
+.container2 > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2em;
+  color: #ffeead;
+}
+
+.container2 > div:nth-child(1n) {
+  background-color: #96ceb4;
+}
+
+.container2 > div:nth-child(3n) {
+  background-color: #88d8b0;
+}
+
+.container2 > div:nth-child(2n) {
+  background-color: #ff6f69;
+}
+
+.container2 > div:nth-child(4n) {
+  background-color: #ffcc5c;
+}
+
+.title {
+  color: #ff6f69;
+  background-color: #ffeead;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0px;
 }
 /*# sourceMappingURL=basic.css.map */
