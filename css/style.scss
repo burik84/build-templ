@@ -1,75 +1,29 @@
+.flexbox-header {
+    display: flex;
+}
 
-article{
+.flexbox-header :nth-child(3) {
+    margin-left: auto;
+}
+
+.grid-page {
     display: grid;
-    // grid-template-columns: 80px 1fr 80px;
-    grid-template-columns: 40px 1fr 40px;
-    grid-column-gap: 10px;
-}
-article>*{
-    grid-column: 2;
-    min-width: 0;
-}
-article>figure{
-    grid-column: 1/-1;
-    margin: 20px 0;
-}
-article>.aside{
-    // grid-column: 3;
-    grid-column: 1;
-    color:#666;
-    font-size: 0.8em;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px 200px 40px;
 }
 
-article>blockquote{
-    grid-column: 1/-1;
-    margin: 20px 0;
-    color: #666;
-    border-left:10px solid #eee ;
-    padding-left: 10px;
-}
-/* General styling */
-
-html, body {
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
+.header {
+    grid-column: span 12;
 }
 
-body {
-    margin: 0 10px;
+.menu {
+    grid-column: span 2;
 }
 
-img {
-    width: 100%;
+.content {
+    grid-column: span 10;
 }
 
-.line-numbers a {
-    text-decoration: none;
-    color: #000;
-    padding-right: 1em;
-}
-
-code {
-    background: #eee;
-    padding: 2px 5px;
-}
-
-pre {
-    background: #eee;
-    padding: 10px 15px;
-    overflow: auto;
-}
-
-pre > code {
-    padding: 0;
-}
-
-figure {
-    margin: 0;
-}
-
-figure figcaption {
-    color: #666;
-    font-style: italic;
-    font-size: 0.8em;
+.footer {
+    grid-column: span 12;
 }

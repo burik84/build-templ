@@ -1,80 +1,35 @@
-article {
+.flexbox-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flexbox-header :nth-child(3) {
+  margin-left: auto;
+}
+
+.grid-page {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 40px 1fr 40px;
-      grid-template-columns: 40px 1fr 40px;
-  grid-column-gap: 10px;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-rows: 40px 200px 40px;
+      grid-template-rows: 40px 200px 40px;
 }
 
-article > * {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  min-width: 0;
+.header {
+  grid-column: span 12;
 }
 
-article > figure {
-  grid-column: 1/-1;
-  margin: 20px 0;
+.menu {
+  grid-column: span 2;
 }
 
-article > .aside {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  color: #666;
-  font-size: 0.8em;
+.content {
+  grid-column: span 10;
 }
 
-article > blockquote {
-  grid-column: 1/-1;
-  margin: 20px 0;
-  color: #666;
-  border-left: 10px solid #eee;
-  padding-left: 10px;
-}
-
-/* General styling */
-html, body {
-  margin: 0;
-  padding: 0;
-  line-height: 1.4;
-}
-
-body {
-  margin: 0 10px;
-}
-
-img {
-  width: 100%;
-}
-
-.line-numbers a {
-  text-decoration: none;
-  color: #000;
-  padding-right: 1em;
-}
-
-code {
-  background: #eee;
-  padding: 2px 5px;
-}
-
-pre {
-  background: #eee;
-  padding: 10px 15px;
-  overflow: auto;
-}
-
-pre > code {
-  padding: 0;
-}
-
-figure {
-  margin: 0;
-}
-
-figure figcaption {
-  color: #666;
-  font-style: italic;
-  font-size: 0.8em;
+.footer {
+  grid-column: span 12;
 }
 /*# sourceMappingURL=style.css.map */
