@@ -1,11 +1,14 @@
-// start Grid
-
-.container{
+.container {
     display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-columns: repeat(3,1fr);
-    // grid-template-rows: 50px 50px ;
-    // grid-template-rows: repeat(2, 100px);
-    grid-template: repeat(2,50px)/repeat(3, 1fr);
-    grid-gap: 5px;
+    grid-gap: 3px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 40px 40px;
 }
+
+.header {}
+
+.menu {}
+
+.content {}
+
+.footer {}

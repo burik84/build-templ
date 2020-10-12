@@ -1,9 +1,10 @@
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (50px)[2];
-  -ms-grid-columns: (1fr)[3];
-      grid-template: repeat(2, 50px)/repeat(3, 1fr);
-  grid-gap: 5px;
+  grid-gap: 3px;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: 40px 40px;
+      grid-template-rows: 40px 40px;
 }
 /*# sourceMappingURL=style.css.map */
