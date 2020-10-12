@@ -2,8 +2,10 @@
   display: -ms-grid;
   display: grid;
   grid-gap: 5px;
-  -ms-grid-columns: (100px)[6];
-      grid-template-columns: repeat(6, 100px);
+  -ms-grid-columns: (100px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 100px);
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   -ms-grid-rows: (100px)[2];
       grid-template-rows: repeat(2, 100px);
 }
