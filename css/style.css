@@ -1,45 +1,9 @@
-.container > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 2em;
-  color: #ffeead;
-}
-
-html, body {
-  background-color: #ffeead;
-  margin: 10px;
-}
-
-.container > div:nth-child(1n) {
-  background-color: #96ceb4;
-}
-
-.container > div:nth-child(3n) {
-  background-color: #88d8b0;
-}
-
-.container > div:nth-child(2n) {
-  background-color: #ff6f69;
-}
-
-.container > div:nth-child(4n) {
-  background-color: #ffcc5c;
-}
-
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 100px auto;
-      grid-template-columns: 100px auto;
-  -ms-grid-rows: 50px 50px 100px;
-      grid-template-rows: 50px 50px 100px;
+  -ms-grid-rows: (50px)[2];
+  -ms-grid-columns: (1fr)[3];
+      grid-template: repeat(2, 50px)/repeat(3, 1fr);
   grid-gap: 5px;
 }
 /*# sourceMappingURL=style.css.map */
