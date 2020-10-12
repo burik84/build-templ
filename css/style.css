@@ -7,17 +7,33 @@
       grid-template-columns: repeat(12, 1fr);
   -ms-grid-rows: 40px auto 40px;
       grid-template-rows: 40px auto 40px;
+      grid-template-areas: ". h h h h h h h h h h ." "m c c c c c c c c c c c" ". f f f f f f f f f f . ";
 }
 
 .header {
-  grid-column: 1 / -1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 10;
+  grid-area: h;
+}
+
+.menu {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: m;
 }
 
 .content {
-  grid-column: 2 / -1;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 11;
+  grid-area: c;
 }
 
 .footer {
-  grid-column: 1 / -1;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 10;
+  grid-area: f;
 }
 /*# sourceMappingURL=style.css.map */
