@@ -4,6 +4,8 @@
     grid-gap: 3px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 40px auto 40px;
+    // justify-items: center;
+    // align-items: center;
 }
 
 .header {
@@ -16,6 +18,8 @@
 
 .content {
     grid-column: 3 / -1;
+    justify-self: center;
+    align-self: end;
 }
 
 .footer {

@@ -21,6 +21,11 @@
 
 .content {
   grid-column: 3 / -1;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 
 .footer {
