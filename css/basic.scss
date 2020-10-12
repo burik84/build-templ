@@ -2,16 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 1em;
   color: #ffeead;
 }
 
 html, body {
-  box-sizing: border-box;
-  background-color: #ffeead;
-  height: 100%;
-  padding: 10px;
-  margin: 0px;
+box-sizing: border-box;
+background-color: #ffeead;
+height: 100%;
+padding: 10px;
+margin: 0px;
 }
 
 .container > div:nth-child(1n) {
