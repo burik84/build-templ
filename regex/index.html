@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регулярный выражение в JavaScript</title>
+    <style>
+        .form-input{
+            display: block;
+            margin-top: 0.5rem;
+            padding: 0.375rem 0.75rem;
+            min-width: 250px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            outline: none;
+        }
+        .form-input_valid{
+            border: 1px solid #28a745;
+        }
+        .form-input_invalid{
+            border: 1px solid #dc3545;
+        }
+    </style>
 </head>
 <body>
+    <form action="">
+        <label for="password">Пароль:</label>
+        <input type="text" class="form-input" id="password">
+    </form>
+    <script src="./04_regex.js"></script>
     <script src="./app.js"></script>
 </body>
 </html>
