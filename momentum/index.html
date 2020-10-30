@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" type="module"></script>
+</head>
+<body>
+    <h1 class="clock">
+        <time class="current-moment">
+          <span class="current-moment__date" id="date"></span>
+          <span class="current-moment__time" id="time"><span class="current-moment__delimiter">:</span><span class="current-moment__delimiter">:</span></span>
+        </time>
+      </h1>
+      <picture class="hour-picture">
+        <img class="hour-picture__image" id="bg-image" alt="" width="480">
+      </picture>
+      <section class="greeting">
+        <h2 class="greeting__message">
+          <span class="greeting__prefix" id="greeting-prefix">Добрый день,</span>
+          <span class="greeting__name" id="name" spellcheck="false" contenteditable></span>
+        </h2>
+      </section>
+      <section class="focus">
+        <header>
+          <p class="focus__question">Задача на сегодня</p>
+        </header>
+        <h2 class="focus__task" id="task" contenteditable></h2>
+      </section>
+      <aside class="day-quote">
+        <blockquote class="day-quote__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quaerat cum omnis blanditiis earum temporibus ipsa illum porro, nobis fugiat?
+          <footer>—Aldous Huxley, <cite>Brave New World</cite></footer>
+        </blockquote>
+      </aside>
+      <footer class="page-footer">
+        <section class="weather">
+          <div class="weather__top-row">
+            <h2 class="weather__city" id="city" contenteditable></h2>
+            <div class="weather__controls">
+              <button class="weather__update-btn" id="weather-btn" type="button">Update</button>
+            </div>
+          </div>
+          <div class="weather__data">
+            <dl>
+              <div class="weather__data-row">
+                <dt class="weather__temp-label">Температура:</dt>
+                <dd class="weather__temp-data">
+                  <span class="weather__temp-value" id="city-temp"></span>
+                  <span class="weather__temp-unit">℃</span>
+                </dd>
+              </div>
+              <div class="weather__data-row">
+                <dt class="weather__humidity-label">Влажность воздуха:</dt>
+                <dd class="weather__humidity-data">
+                  <span class="weather__humidity-value" id="city-hum"></span>
+                  <span class="weather__humidity-unit">%</span>
+                </dd>
+              </div>
+              <div class="weather__data-row">
+                <dt class="weather__speed-label">Скорость ветра:</dt>
+                <dd class="weather__speed-data">
+                  <span class="weather__speed-value" id="city-speed"></span>
+                  <span class="weather__speed-unit">м/с</span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+        <div class="image-switcher">
+          <button class="image-switcher__btn" id="switcher-btn" type="button">Next</button>
+        </div>
+      </footer>
+</body>
+</html>
