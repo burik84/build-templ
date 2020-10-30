@@ -17,7 +17,7 @@ export default class {
     }
 
     async getWeatherData() {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=8e5d8bf48f1835d388363c5ffde80eeb&&units=Metric&lang=ru`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=fa4575ebd77db5b176bcec047383253d&&units=Metric&lang=ru`);
       if (response.ok && response.headers.get('Content-Type') === 'application/json; charset=utf-8') {
         const json = await response.json();
         this.stopAnimation();
