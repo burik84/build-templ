@@ -31,3 +31,7 @@
 - calculator
   - [video](https://youtu.be/j59qQ7YWLxw)
   - [code](https://github.com/WebDevSimplified/Vanilla-JavaScript-Calculator)
+
+## Eslint
+
+ESLint — это утилита, которая может анализировать написанный код.
