@@ -38,3 +38,11 @@ File **.gitignore** - список файлов и папок, которые н
 - `git merge branch` слияние файлов и папок в текущую ветку из branch
 - `git remote add origin git@github.com:burik84/git-course.git` привезка глобально репозитория к локальному
 - `git push -u origin master` отправляем файлы из локального репо в глобальный
+
+## Git workfolw that Works
+
+- `git clone <http...>` клонирование репозитория с сервера, в нашем случае с github
+- `git checkout -b name` создание новой ветки и переключение на неё
+- `git push -u origin name` отправляем файлы из локального репо в глобальный
+- `git push\pull` отправка\забираем изменений в\из глобального репозитория
+- `git merge branch` слияние файлов и папок в текущую ветку из branch
