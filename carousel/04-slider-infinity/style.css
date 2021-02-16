@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.slide {
+  width: 512px;
+  height: 512px;
+  border: 3px solid #c0c0c0;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-item {
+  width: 512px;
+  height: 512px;
+  position: absolute;
+  transition: all 1s ease;
+  left: 0;
+  top: 0;
+}
+.slide-item:nth-child(3n + 1) {
+  background-color: red;
+}
+.slide-item:nth-child(3n + 2) {
+  background-color: green;
+}
+.slide-item:nth-child(3n + 3) {
+  background-color: blue;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 60px auto 40px;
+}
