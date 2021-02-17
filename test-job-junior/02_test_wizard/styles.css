@@ -1,0 +1,60 @@
+:root {
+  --primary-color: #2f80ed;
+  --secondary-color: #e0e0e0;
+}
+.steps,
+.step__point {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step {
+  flex: 1;
+  margin-top: auto;
+}
+.step:first-child .pre-line {
+  visibility: hidden;
+}
+.step:last-child .post-line {
+  visibility: hidden;
+}
+.step__header {
+  text-align: center;
+  margin-top: auto;
+}
+.point {
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: var(--secondary-color);
+  border: 1px solid transparent;
+  transition: background 1s ease;
+}
+
+.pre-line,
+.post-line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  margin-top: 18px;
+  transition: background 1s ease;
+}
+.active .point {
+  border: 1px solid var(--primary-color);
+}
+.active .pre-line {
+  background-color: var(--primary-color);
+}
+.done .point,
+.done .pre-line,
+.done .post-line {
+  background-color: var(--primary-color);
+}
+.inactive {
+}
+
+button {
+  height: 34px;
+  padding: 0 25px;
+}
