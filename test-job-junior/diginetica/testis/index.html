@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test is</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper header">
+        <p>Шапка сайта</p>
+      </div>
+    </header>
+    <main>
+      <div class="wrapper">
+        <section class="search">
+          <form action="">
+            <div class="search__input">
+              <div class="search__icon">
+                <img src="./assets/icons/search.svg" alt="search icon" />
+              </div>
+              <input type="text" placeholder="Запрос пользователя" />
+            </div>
+            <input type="submit" value="Найти" />
+          </form>
+          <button>Закрыть</button>
+        </section>
+        <section class="block-head">
+          <div class="block-head__title">
+            <h2>Результаты по запросу</h2>
+            <span
+              >Показаны результаты для “Запрос пользозвателя”. Вы искали “Зопрос
+              пользователя”.</span
+            >
+          </div>
+          <div class="categories">
+            <div class="categories__container">
+              <div class="category">
+                <div class="category__img"></div>
+                <h3>Название категории</h3>
+                <p>134 товара</p>
+              </div>
+              <div class="category">
+                <div class="category__img"></div>
+                <h3>Название категории</h3>
+                <p>134 товара</p>
+              </div>
+              <div class="category">
+                <div class="category__img"></div>
+                <h3>Название категории</h3>
+                <p>134 товара</p>
+              </div>
+              <div class="category">
+                <div class="category__img"></div>
+                <h3>Название категории</h3>
+                <p>134 товара</p>
+              </div>
+              <div class="category">
+                <div class="category__img"></div>
+                <h3>Название категории</h3>
+                <p>134 товара</p>
+              </div>
+              <div class="category">
+                <div class="category__img"></div>
+                <h3>Название категории</h3>
+                <p>134 товара</p>
+              </div>
+            </div>
+            <div class="categories__ellipsies"></div>
+          </div>
+        </section>
+        <aside>
+          <div class="block-up">
+            <h4>Все категории</h4>
+            <ul>
+              <li>
+                <a href="#"
+                  >Категория в которой нашли что-то <span>(xxx)</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Категория в которой нашли что-то <span>(xxx)</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Категория в которой нашли что-то <span>(xxx)</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Категория в которой нашли что-то <span>(xxx)</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Категория в которой нашли что-то <span>(xxx)</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Категория в которой нашли что-то <span>(xxx)</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Категория в которой нашли что-то <span>(xxx)</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Категория в которой нашли что-то <span>(xxx)</span></a
+                >
+              </li>
+              <li><a href="#">Ещё 10 категорий...</a></li>
+            </ul>
+          </div>
+          <div class="filters">
+            <div class="filter filter__currency">
+              <h3>Цена, валюта</h3>
+              <div class="filter__input">
+                <label for="from">от</label>
+                <input type="number" id="from" name="from" />
+                <label for="before">до</label>
+                <input type="number" id="before" name="before" />
+                <span>Р</span>
+              </div>
+              <div class="filter__slider">
+                <input
+                  type="range"
+                  id="from-slider"
+                  name="from-slider"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  type="range"
+                  id="before-slider"
+                  name="before-slider"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <div class="filter filter__brends">
+              <h3>Бренд</h3>
+              <button>Очистить</button>
+              <ul>
+                <li>
+                  <input type="checkbox" id="brend1" name="brend" />
+                  <label for="brend1">Бренд</label><span>(xxx)</span>
+                </li>
+                <li>
+                  <input type="checkbox" id="brend2" name="brend" />
+                  <label for="brend1">Бренд</label><span>(x)</span>
+                </li>
+                <li>
+                  <input type="checkbox" id="brend3" name="brend" />
+                  <label for="brend1">Бренд</label><span>(x xxx)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <section class="results">
+          <div class="results__filter">
+            <div class="filter_left">
+              <p>Сортировать по:</p>
+              <button>популярности</button>
+              <button>сначала дешевые</button>
+              <button>сначала дорогие</button>
+            </div>
+            <div class="filter_right">
+              <p>показывать по</p>
+              <select name="select">
+                <option value="value1">12</option>
+                <option value="value2" selected>24</option>
+                <option value="value3">72</option>
+              </select>
+            </div>
+          </div>
+          <div class="results__tags">
+            <button>Уточнение</button>
+            <button>Уточнение</button>
+            <button>Уточнение</button>
+            <button>Уточнение</button>
+          </div>
+          <div class="results__items">
+            <div class="item">
+              <div class="item__pic"></div>
+              <p class="item_description">
+                Наименование товара, которое не более 2 строк
+              </p>
+              <div class="item__price">
+                <p>XX XXX,$</p>
+                <span>XX XXX, $</span>
+              </div>
+              <button class="btn item__btn">Кнопка</button>
+            </div>
+          </div>
+          <div class="results__pages">
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">...</a>
+            <a href="#">13</a>
+            <a href="#">></a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
