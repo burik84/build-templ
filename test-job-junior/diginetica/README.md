@@ -41,6 +41,9 @@
   ```
 
 - [ ] На сайте есть ссылка, ведущая на промо страницу: <a href="http://example.com/">promo</a>. Нужно доработать html-код ссылки так, чтобы при клике на ссылку отправлялся запрос для трекинга клика <https://httpbin.org/status/200> и происходил переход на промо страницу в новом окне.
+```
+<a href="http://example.com/?utm_source=https://httpbin.org/status/200" target='_blank'>promo</a>
+```
 - [ ] Написать функцию для получения список всех артикулов товаров в консоли браузера на странице <https://groupprice.ru/categories/jenskaya-odejda?referer_from=main_catalog>. *
 Выполненное задние принимается через публикацию кода на codepen.io.
 - [ ] Написать функцию для получения всех характеристики товара в консоли браузера в виде объекта в формате attributeName: value на странице <https://nir-vanna.ru/product/smesitel-bravat-art-f175109c-dlya-rakoviny/> *
