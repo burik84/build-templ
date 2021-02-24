@@ -18,8 +18,8 @@
         <p>Шапка сайта</p>
       </div>
     </header>
-    <main>
-      <div class="wrapper">
+    <div class="wrapper">
+      <main>
         <section class="search">
           <form action="">
             <div class="search__input">
@@ -125,7 +125,7 @@
           </div>
           <div class="filters">
             <div class="filter filter__currency">
-              <h3>Цена, валюта</h3>
+              <h4>Цена, валюта</h4>
               <div class="filter__input">
                 <label for="from">от</label>
                 <input type="number" id="from" name="from" />
@@ -151,19 +151,24 @@
               </div>
             </div>
             <div class="filter filter__brends">
-              <h3>Бренд</h3>
-              <button>Очистить</button>
+              <div class="filter__title">
+                <h4>Бренд</h4>
+                <button>Очистить</button>
+              </div>
               <ul>
                 <li>
                   <input type="checkbox" id="brend1" name="brend" />
+                  <div class="filter__checkbox" id="input-brend1"></div>
                   <label for="brend1">Бренд</label><span>(xxx)</span>
                 </li>
                 <li>
                   <input type="checkbox" id="brend2" name="brend" />
+                  <div class="filter__checkbox" id="input-brend2"></div>
                   <label for="brend1">Бренд</label><span>(x)</span>
                 </li>
                 <li>
                   <input type="checkbox" id="brend3" name="brend" />
+                  <div class="filter__checkbox" id="input-brend3"></div>
                   <label for="brend1">Бренд</label><span>(x xxx)</span>
                 </li>
               </ul>
@@ -214,7 +219,7 @@
             <a href="#">></a>
           </div>
         </section>
-      </div>
-    </main>
+      </main>
+    </div>
   </body>
 </html>
