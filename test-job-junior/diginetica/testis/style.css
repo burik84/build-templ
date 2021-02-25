@@ -1,5 +1,11 @@
-.block-head__title span, .category h3, .category p, .block-up span, .filters span, .filters label {
+.block-head__title span, .category h3, .category p, .block-up span, .filters span, .filters label, .results__filter, .filter_left button,
+.filter_left button:active {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+.results__tags button,
+.results__tags button:active {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -83,6 +89,7 @@ header {
   outline: none;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  cursor: pointer;
 }
 
 .search__input {
@@ -119,6 +126,7 @@ input[type='submit'] {
   border: 1px solid transparent;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  cursor: pointer;
 }
 
 .search__icon {
@@ -231,7 +239,7 @@ input[type='submit'] {
   top: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(269.76deg, #FFFFFF 62.83%, rgba(255, 255, 255, 0) 145.7%);
+  background: linear-gradient(269.76deg, #ffffff 62.83%, rgba(255, 255, 255, 0) 145.7%);
 }
 
 aside {
@@ -257,7 +265,7 @@ aside {
 
 .block-up a {
   text-decoration: none;
-  color: #5375B7;
+  color: #5375b7;
 }
 
 .block-up span {
@@ -277,22 +285,21 @@ aside {
   color: #ababab;
   opacity: 0.7;
   margin-left: 4px;
+  cursor: pointer;
 }
 
 .filters button,
 .filters button:active {
   font-size: 10px;
   line-height: 11px;
-  width: 44px;
-  height: 11px;
   color: #333333;
   opacity: 0.5;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   background-color: transparent;
-  background-color: transparent;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .filters label {
@@ -300,6 +307,8 @@ aside {
   line-height: 16px;
   color: #000;
   opacity: 0.7;
+  cursor: pointer;
+  padding-left: 8px;
 }
 
 .filters ul {
@@ -353,7 +362,7 @@ aside {
   height: 15px;
   border: 1px solid #dedede;
   border-radius: 3px;
-  margin-right: 8px;
+  cursor: pointer;
 }
 
 .filter__currency {
@@ -365,5 +374,99 @@ aside {
   grid-row: 3;
   -ms-grid-column: 2;
   grid-column: 2;
+}
+
+.results__filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  line-height: 19px;
+}
+
+.filter_left p {
+  display: inline-block;
+}
+
+.filter_left button,
+.filter_left button:active {
+  margin-left: 15px;
+  font-size: 14px;
+  line-height: 19px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #5375b7;
+  cursor: pointer;
+}
+
+.filter_left button.active {
+  color: #333;
+  border-bottom: 1px solid #f1bd45;
+}
+
+.filter_right p {
+  display: inline-block;
+}
+
+.filter__box {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.filter__box select {
+  border: none;
+}
+
+.filter__box select:hover, .filter__box select:active {
+  border: none;
+}
+
+.results__tags {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.results__tags button,
+.results__tags button:active {
+  margin-left: 10px;
+  padding: 7px 10px;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: #fff3d8;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.results__tags button:first-child,
+.results__tags button:active:first-child {
+  margin-left: 0;
 }
 /*# sourceMappingURL=style.css.map */

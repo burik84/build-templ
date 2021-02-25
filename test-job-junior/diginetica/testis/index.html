@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -179,17 +183,19 @@
           <div class="results__filter">
             <div class="filter_left">
               <p>Сортировать по:</p>
-              <button>популярности</button>
+              <button class="active">популярности</button>
               <button>сначала дешевые</button>
               <button>сначала дорогие</button>
             </div>
             <div class="filter_right">
               <p>показывать по</p>
-              <select name="select">
-                <option value="value1">12</option>
-                <option value="value2" selected>24</option>
-                <option value="value3">72</option>
-              </select>
+              <div class="filter__box">
+                <select name="select">
+                  <option value="value1">12</option>
+                  <option value="value2" selected>24</option>
+                  <option value="value3">72</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="results__tags">
