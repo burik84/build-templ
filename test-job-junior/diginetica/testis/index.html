@@ -152,22 +152,25 @@
                 <span>Р</span>
               </div>
               <div class="filter__slider">
-                <input
-                  type="range"
-                  id="from-slider"
-                  name="from-slider"
-                  min="0"
-                  max="100"
-                  value="10"
-                />
-                <input
-                  type="range"
-                  id="before-slider"
-                  name="before-slider"
-                  min="0"
-                  max="100"
-                  value="90"
-                />
+                <div class="filter-wrapper">
+                  <input
+                    type="range"
+                    id="slider-a"
+                    name="from-slider"
+                    multiple
+                    min="0"
+                    max="100"
+                    value="10"
+                  />
+                  <input
+                    type="range"
+                    id="slider-b"
+                    name="before-slider"
+                    min="0"
+                    max="100"
+                    value="90"
+                  />
+                </div>
               </div>
             </div>
             <div class="filter filter__brends">
@@ -245,5 +248,6 @@
         </section>
       </main>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>

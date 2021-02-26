@@ -359,7 +359,7 @@ aside {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 19px;
 }
 
 .filter__input input {
@@ -385,34 +385,53 @@ aside {
   line-height: 40px;
 }
 
-.filter__slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: relative;
-}
-
-.filter__slider input[type='range'] {
+.filter-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: max-content 1em;
+      grid-template-rows: -webkit-max-content 1em;
+      grid-template-rows: max-content 1em;
   width: 100%;
-  cursor: pointer;
-  background: #000;
   height: 4px;
+  background-color: #000;
   border-radius: 30px;
-  color: transparent;
+}
+
+.filter-wrapper input[type='range'] {
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  /* same as before */
+  background-color: transparent;
+  /* get rid of white Chrome background */
+  color: #000;
+  font: inherit;
+  /* fix too small font-size in both Chrome & Firefox */
+  margin: 0;
+  pointer-events: none;
+  /* let clicks pass through */
+}
+
+.filter-wrapper input[type='range']::-webkit-slider-runnable-track, .filter-wrapper input[type='range']::-webkit-slider-thumb, .filter-wrapper input[type='range'] {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
-.filter__slider input[type='range']:focus {
-  outline: transparent;
+.filter-wrapper input[type='range']::-webkit-slider-runnable-track {
+  height: 100%;
+  width: 100%;
 }
 
-.filter__slider input[type='range']::-webkit-slider-thumb {
+.filter-wrapper input[type='range']::-moz-range-track {
+  height: 100%;
+  width: 100%;
+}
+
+.filter-wrapper input[type='range']::-webkit-slider-thumb {
+  pointer-events: auto;
+  /* catch clicks */
   -webkit-appearance: none;
   border: 2px solid #000000;
   height: 14px;
@@ -420,6 +439,23 @@ aside {
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
+}
+
+.filter-wrapper input[type='range']::-moz-range-thumb {
+  pointer-events: auto;
+  /* catch clicks */
+  -webkit-appearance: none;
+  border: 2px solid #000000;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.filter-wrapper input[type='range']:active, .filter-wrapper input[type='range']:focus {
+  border: none;
+  outline: none;
 }
 
 .filter__title {
@@ -448,7 +484,7 @@ aside {
 }
 
 .filter__currency {
-  margin-bottom: 27px;
+  margin-bottom: 32px;
 }
 
 .results {

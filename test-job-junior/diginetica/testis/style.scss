@@ -4,6 +4,24 @@
 %font-family-roboto {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
+$height-slider: 1em;
+$width-slider: 20em;
+@mixin track() {
+  // background: #000; /* get rid of Firefox track background */
+  height: 100%;
+  width: 100%;
+}
+
+@mixin thumb() {
+  pointer-events: auto; /* catch clicks */
+  -webkit-appearance: none;
+  border: 2px solid #000000;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
 
 * {
   margin: 0;
@@ -272,7 +290,7 @@ aside {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 19px;
   input {
     border: none;
     width: 100%;
@@ -294,39 +312,51 @@ aside {
   border-radius: 3px;
   line-height: 40px;
 }
-
-.filter__slider {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-
+.filter-wrapper {
+  display: grid;
+  grid-template-rows: max-content $height-slider;
+  // margin: 1em auto;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 30px;
   input[type='range'] {
-    width: 100%;
-    cursor: pointer;
-    background: #000;
-    height: 4px;
-    border-radius: 30px;
-    color: transparent;
-    appearance: none;
-    &:last-child {
-      // background: transparent;
-      // position: absolute;
-      // z-index: 0;
-    }
-    &:focus {
-      outline: transparent;
-    }
-    &::-webkit-slider-thumb {
+    transform: translateY(-40%);
+    grid-column: 1;
+    grid-row: 2;
+    &::-webkit-slider-runnable-track,
+    &::-webkit-slider-thumb,
+    & {
       -webkit-appearance: none;
-      border: 2px solid #000000;
-      height: 14px;
-      width: 14px;
-      border-radius: 50%;
-      background: #ffffff;
-      cursor: pointer;
+    }
+    /* same as before */
+    background-color: transparent; /* get rid of white Chrome background */
+    color: #000;
+    font: inherit; /* fix too small font-size in both Chrome & Firefox */
+    margin: 0;
+    pointer-events: none; /* let clicks pass through */
+
+    &::-webkit-slider-runnable-track {
+      @include track;
+    }
+    &::-moz-range-track {
+      @include track;
+    }
+
+    &::-webkit-slider-thumb {
+      @include thumb;
+    }
+    &::-moz-range-thumb {
+      @include thumb;
+    }
+    &:active,
+    &:focus {
+      border: none;
+      outline: none;
     }
   }
 }
+
 .filter__title {
   display: flex;
   flex-direction: row;
@@ -342,7 +372,7 @@ aside {
   cursor: pointer;
 }
 .filter__currency {
-  margin-bottom: 27px;
+  margin-bottom: 32px;
 }
 .results {
   grid-row: 3;
