@@ -132,9 +132,23 @@
               <h4>Цена, валюта</h4>
               <div class="filter__input">
                 <label for="from">от</label>
-                <input type="number" id="from" name="from" />
+                <div class="filter-box__input">
+                  <input
+                    type="number"
+                    id="from"
+                    name="from"
+                    placeholder="1 000"
+                  />
+                </div>
                 <label for="before">до</label>
-                <input type="number" id="before" name="before" />
+                <div class="filter-box__input">
+                  <input
+                    type="number"
+                    id="before"
+                    name="before"
+                    placeholder="1 000 000"
+                  />
+                </div>
                 <span>Р</span>
               </div>
               <div class="filter__slider">
@@ -144,6 +158,7 @@
                   name="from-slider"
                   min="0"
                   max="100"
+                  value="10"
                 />
                 <input
                   type="range"
@@ -151,6 +166,7 @@
                   name="before-slider"
                   min="0"
                   max="100"
+                  value="90"
                 />
               </div>
             </div>
@@ -219,10 +235,12 @@
           </div>
           <div class="results__pages">
             <a href="#">2</a>
-            <a href="#">3</a>
+            <a href="#" class="active">3</a>
             <a href="#">...</a>
             <a href="#">13</a>
-            <a href="#">></a>
+            <a href="#" class="next"
+              ><img src="./assets/icons/next.svg" alt="next"
+            /></a>
           </div>
         </section>
       </main>
