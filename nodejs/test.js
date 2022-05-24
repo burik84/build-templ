@@ -1,3 +1,10 @@
-const userNme='Alex'
-const sayHi=(userNme)=>`Hello, my name is ${userNme}`
-console.log(sayHi(userNme))
+const userName = 'Alex';
+const sayHi = (userName) => `Hello, my name is ${userName}`;
+// console.log(sayHi(userName))
+
+// module.exports = userName;
+
+module.exports = {
+  userName,
+  sayHi,
+};
