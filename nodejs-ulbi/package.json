@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-ulbi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "01":"node ./lessons/01_process.js",
+    "02":"node ./lessons/02_path.js",
+    "03":"node ./lessons/03_fs.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
