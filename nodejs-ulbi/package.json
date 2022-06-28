@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "01":"node ./lessons/01_process.js",
-    "02":"node ./lessons/02_path.js",
-    "03":"node ./lessons/03_fs.js"
+    "01": "node ./lessons/01_process.js",
+    "02": "node ./lessons/02_path.js",
+    "03": "node ./lessons/03_fs.js",
+    "04": "node ./lessons/04_os.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,3 +19,4 @@
     "nodemon": "^2.0.16"
   }
 }
+
