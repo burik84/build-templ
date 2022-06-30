@@ -8,7 +8,8 @@
     "01": "node ./lessons/01_process.js",
     "02": "node ./lessons/02_path.js",
     "03": "node ./lessons/03_fs.js",
-    "04": "node ./lessons/04_os.js"
+    "04": "node ./lessons/04_os.js",
+    "05": "node ./lessons/05_events.js"
   },
   "author": "",
   "license": "ISC",
