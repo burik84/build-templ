@@ -9,7 +9,8 @@
     "02": "node ./lessons/02_path.js",
     "03": "node ./lessons/03_fs.js",
     "04": "node ./lessons/04_os.js",
-    "05": "node ./lessons/05_events.js"
+    "05": "node ./lessons/05_events.js",
+    "06": "node ./lessons/06_stream.js"
   },
   "author": "",
   "license": "ISC",
