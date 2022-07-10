@@ -1,12 +1,14 @@
-const http = require('http');
-const EventEmitter = require('events');
-const Router = require('./framework/Router');
+// const http = require('http');
+// const EventEmitter = require('events');
+// const Router = require('./framework/Router');
 const Application = require('./framework/Application');
-const { appendFile } = require('fs');
+// const { appendFile } = require('fs');
+const userRouter = require('./src/user-router');
+const parseJSON = require('./framework/parseJSON');
 
 const PORT = process.env.PORT || 5000;
 
-const emitter = new EventEmitter();
+// const emitter = new EventEmitter();
 
 // const server = http.createServer((req, res) => {
 //   res.writeHead(200, {
@@ -26,15 +28,15 @@ const emitter = new EventEmitter();
 //   res.end(req.url);
 // });
 
-const router = new Router();
+// const router = new Router();
 const app = new Application();
 
-router.get('/users', (req, res) => {
-  res.end('You send request  to /USERS');
-});
-router.get('/posts', (req, res) => {
-  res.end('You send request  to /POSTS');
-});
+// router.get('/users', (req, res) => {
+//   res.end('You send request  to /USERS');
+// });
+// router.get('/posts', (req, res) => {
+//   res.end('You send request  to /POSTS');
+// });
 
 // const server = http.createServer((req, res) => {
 //   const emitted = emitter.emit(`[${req.url}]:[${req.method}]`, req, res);
@@ -43,5 +45,6 @@ router.get('/posts', (req, res) => {
 // });
 
 // server.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
-app.addRouter(router);
+app.use(parseJSON);
+app.addRouter(userRouter);
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
